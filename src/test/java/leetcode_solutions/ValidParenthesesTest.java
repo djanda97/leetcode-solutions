@@ -28,8 +28,9 @@ class ValidParenthesesTest {
     }
 
     @Test
-    void testIsValid() {
-        assertTrue(isValid("(){}[]"));
-        assertFalse(isValid("{[)"));
+    void test() {
+        assertTrue(isValid("()"));
+        assertTrue(isValid("()[]{}"));
+        assertFalse(isValid("(]"));
     }
 }
