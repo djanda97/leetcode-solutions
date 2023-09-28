@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 // https://leetcode.com/problems/merge-two-sorted-lists/
 class MergeTwoSortedListsTest {
-    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+    ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         ListNode dummy = new ListNode(0);
         ListNode current = dummy;
         while (list1 != null || list2 != null) {

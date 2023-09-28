@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 // https://leetcode.com/problems/valid-parentheses/
 class ValidParenthesesTest {
-    public boolean isValid(String s) {
+    boolean isValid(String s) {
         Deque<Character> stack = new ArrayDeque<>();
         for (char c : s.toCharArray()) {
             switch (c) {

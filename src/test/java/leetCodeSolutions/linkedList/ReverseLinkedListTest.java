@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 // https://leetcode.com/problems/reverse-linked-list/
 class ReverseLinkedListTest {
-    public ListNode reverseList(ListNode head) {
+    ListNode reverseList(ListNode head) {
         ListNode previous = null;
         ListNode nextCurrent = null;
         ListNode current = head;
