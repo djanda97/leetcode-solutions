@@ -1,6 +1,6 @@
-package leetcode_solutions;
+package leetCodeSolutions.linkedList;
 
-import leetcode_solutions.common.ListNode;
+import leetCodeSolutions.common.ListNode;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -31,11 +31,29 @@ class ReverseLinkedListTest {
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
         head.next.next.next.next = new ListNode(5);
-        ListNode.printList(head); // 1 -> 2 -> 3 -> 4 -> 5
-        List<Integer> values = ListNode.toList(head);
+        ListNode.printList(head);
         ListNode reversed = reverseList(head);
-        ListNode.printList(reversed); // 5 -> 4 -> 3 -> 2 -> 1
+        ListNode.printList(reversed);
         List<Integer> reversedValues = ListNode.toList(reversed);
-        assertArrayEquals(values.reversed().toArray(), reversedValues.toArray());
+        assertArrayEquals(List.of(1, 2, 3, 4, 5).reversed().toArray(), reversedValues.toArray());
+    }
+
+    @Test
+    void testSingleElement() {
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        ListNode.printList(head);
+        ListNode reversed = reverseList(head);
+        ListNode.printList(reversed);
+        List<Integer> reversedValues = ListNode.toList(reversed);
+        assertArrayEquals(List.of(1, 2).reversed().toArray(), reversedValues.toArray());
+    }
+
+    @Test
+    void testEmpty() {
+        ListNode reversed = reverseList(null);
+        ListNode.printList(reversed);
+        List<Integer> reversedValues = ListNode.toList(reversed);
+        assertArrayEquals(List.of().toArray(), reversedValues.toArray());
     }
 }

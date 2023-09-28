@@ -1,6 +1,6 @@
-package leetcode_solutions;
+package leetCodeSolutions.linkedList;
 
-import leetcode_solutions.common.ListNode;
+import leetCodeSolutions.common.ListNode;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -29,12 +29,32 @@ class MergeTwoSortedListsTest {
     @Test
     void test() {
         ListNode list1 = new ListNode(1);
-        ListNode list2 = new ListNode(2);
+        list1.next = new ListNode(2);
+        list1.next.next = new ListNode(4);
+        ListNode list2 = new ListNode(1);
+        list2.next = new ListNode(3);
+        list2.next.next = new ListNode(4);
         ListNode.printList(list1);
         ListNode.printList(list2);
         ListNode mergedList = mergeTwoLists(list1, list2);
         ListNode.printList(mergedList);
         List<Integer> mergedValues = ListNode.toList(mergedList);
-        assertArrayEquals(List.of(1, 2).toArray(), mergedValues.toArray());
+        assertArrayEquals(List.of(1, 1, 2, 3, 4, 4).toArray(), mergedValues.toArray());
+    }
+
+    @Test
+    void testEmpty() {
+        ListNode mergedList = mergeTwoLists(null, null);
+        ListNode.printList(mergedList);
+        List<Integer> mergedValues = ListNode.toList(mergedList);
+        assertArrayEquals(List.of().toArray(), mergedValues.toArray());
+    }
+
+    @Test
+    void testSingleElement() {
+        ListNode mergedList = mergeTwoLists(null, new ListNode(0));
+        ListNode.printList(mergedList);
+        List<Integer> mergedValues = ListNode.toList(mergedList);
+        assertArrayEquals(List.of(0).toArray(), mergedValues.toArray());
     }
 }
