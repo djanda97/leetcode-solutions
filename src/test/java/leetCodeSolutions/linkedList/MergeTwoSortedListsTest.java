@@ -43,7 +43,7 @@ class MergeTwoSortedListsTest {
     }
 
     @Test
-    void testEmpty() {
+    void testEmptyLists() {
         ListNode mergedList = mergeTwoLists(null, null);
         ListNode.printList(mergedList);
         List<Integer> mergedValues = ListNode.toList(mergedList);
@@ -51,7 +51,7 @@ class MergeTwoSortedListsTest {
     }
 
     @Test
-    void testSingleElement() {
+    void testSingleNode() {
         ListNode mergedList = mergeTwoLists(null, new ListNode(0));
         ListNode.printList(mergedList);
         List<Integer> mergedValues = ListNode.toList(mergedList);

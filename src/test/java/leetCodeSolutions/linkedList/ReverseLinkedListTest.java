@@ -39,7 +39,7 @@ class ReverseLinkedListTest {
     }
 
     @Test
-    void testSingleElement() {
+    void testSingleNode() {
         ListNode head = new ListNode(1);
         head.next = new ListNode(2);
         ListNode.printList(head);
@@ -50,7 +50,7 @@ class ReverseLinkedListTest {
     }
 
     @Test
-    void testEmpty() {
+    void testEmptyList() {
         ListNode reversed = reverseList(null);
         ListNode.printList(reversed);
         List<Integer> reversedValues = ListNode.toList(reversed);
